@@ -1,0 +1,29 @@
+<h1>Rock, Paper, and Scissors</h1>
+
+<% if params["choice"] == nil %>
+	<li> Please Chose Your Weapon </li>
+<!-- 	<h2> <a href="/rps?choice=Rock">Rock</a> </h2>
+	<h2> <a href="/rps?choice=Paper">Paper</a> </h2>
+	<h2> <a href="/rps?choice=Scissors">Scissors</a> </h2> -->
+
+	<h2> <a href="/rps?choice=Rock"><img src="https://github.com/haouc/webdev/blob/master/images/rock.png?raw=true" height="75" width="75"> Rock </a> </h2>
+	<h2> <a href="/rps?choice=Paper"><img src="https://github.com/haouc/webdev/blob/master/images/paper.png?raw=true" height="75" width="75"> Paper </a> </h2>
+	<h2> <a href="/rps?choice=Scissors"><img src="https://github.com/haouc/webdev/blob/master/images/scissor.png?raw=true" height="75" width="75"> Scissor </a> </h2>
+
+	<% elsif @win.include?@thisround %>
+	<li> Computer chose <%= @computerplayer %>, while you chose <%= params["choice"] %>
+	<h1> You win! </h1>
+	<h2> <a href="/rps">Play again </h2>
+
+	<% elsif @lose.include?@thisround %>
+	<li> Computer chose <%= @computerplayer %>, while you chose <%= params["choice"] %> </li>
+	<h1> You lose! </h1>
+	<h2> <a href="/rps"> Want Play Again? </h2>
+
+	<% else %>
+	<li> Computer chose <%= @computerplayer %>, while you chose <%= params["choice"] %> </li>
+	<h1> You have a TIE! </h1>
+	<h2> <a href="/rps"> Play Again? </h2>
+<% end %>		
+		
+		
