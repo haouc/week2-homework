@@ -1,6 +1,7 @@
 class DiceController <ApplicationController
 	def rolling
-		@numbers = [1,2,3,4,5,6].sample(2)
+		@numberone = [1,2,3,4,5,6].sample
+		@numbertwo = [1,2,3,4,5,6].sample
 		if params["point"].to_i == 0
 			@target = [7,11]
 			@fail = [2,3,12]
